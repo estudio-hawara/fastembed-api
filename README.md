@@ -2,7 +2,19 @@
 
 ## Overview
 
-This API provides a straightforward way to generate text embeddings for paragraphs using [FastEmbed](https://github.com/qdrant/fastembed/), making it easier to retrieve vector embeddings for downstream tasks like semantic search or text similarity. Currently, the API supports multilingual embeddings using the model [sentence-transformers/paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) and accepts text input one paragraph at a time.
+**Fastembed API** provides a straightforward way to generate text embeddings for paragraphs, making it easier to retrieve vector embeddings for downstream tasks like semantic search or text similarity.
+
+### Context
+
+It was developed as a companyon of [Boc·ajarro](https://github.com/estudio-hawara/boc-ajarro) which, as is written in PHP, needed some Python help in order to create text embeddings in order to feed a vector database.
+
+As it's meant to be executed in a server without a graphic card, it doesn't rely on expensive (in terms of computation) Pytorch setups. Instead, it uses [FastEmbed](https://github.com/qdrant/fastembed/) so it can be executed in the CPU's of a standard Virtual Private Server.
+
+### Limitations
+
+- Currently, the API supports multilingual embeddings using the model [sentence-transformers/paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) and accepts text input one paragraph at a time.
+
+- As it's meant to be executed in a private network, it does not implement any authentication (or authorization) mechanism.
 
 ## Installation
 
