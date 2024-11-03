@@ -1,0 +1,14 @@
+# Folders to ignore from the root
+/.vscode
+/.venv
+/tests
+
+# Files to ignore from the root
+/Dockerfile
+/docker-compose.yml
+/.dockerignore
+/.gitignore
+
+# Files to ignore from everywhere
+__pycache__
+.pytest_cache

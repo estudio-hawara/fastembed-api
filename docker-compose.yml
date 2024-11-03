@@ -1,0 +1,18 @@
+services:
+  fastembed_api:
+    build: .
+    command: uvicorn fastembed_api.main:app --host 0.0.0.0
+    volumes:
+      - fastembed_cache:/tmp/fastembed_cache
+    ports:
+      - 8000:8000
+    tty: true
+    healthcheck:
+      test: curl --fail http://localhost:8000/health || exit 1
+      interval: 2s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+volumes:
+  fastembed_cache:
